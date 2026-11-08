@@ -1,0 +1,15 @@
+{
+  "name": "worknote-billing",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Turn freelance work notes into reviewed PayPal sandbox invoices.",
+  "engines": { "node": ">=22.13" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env.local server.mjs",
+    "dev": "node --env-file-if-exists=.env.local --watch server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check server.mjs && node --check public/app.js",
+    "check:public": "node scripts/check-public-files.mjs"
+  }
+}

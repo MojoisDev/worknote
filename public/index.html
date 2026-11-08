@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Turn your freelance work notes into reviewed invoices and track payment with PayPal sandbox.">
+  <title>Worknote — freelance billing</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="mobile-header"><a href="#new" class="brand">Worknote<span class="brand-dot">.</span></a><button id="menu-toggle" class="secondary" aria-expanded="false" aria-controls="sidebar">Menu</button></header>
+  <aside class="sidebar" id="sidebar">
+    <a href="#new" class="brand" aria-label="Worknote home"><svg viewBox="0 0 28 28" aria-hidden="true"><path d="m3 7 5 15 6-11 6 11 5-15"/></svg>Worknote<span class="brand-dot">.</span></a>
+    <div class="workspace"><span class="workspace-avatar">W</span><div>Freelance workspace<small>Personal workspace</small></div></div>
+    <nav aria-label="Main navigation">
+      <a href="#new" data-route="new"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>New invoice</a>
+      <a href="#invoices" data-route="invoices"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 3h10v14l-2-1.5-3 1.5-3-1.5L5 17V3ZM8 7h4M8 10h4"/></svg>Invoices</a>
+      <a href="#settings" data-route="settings"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 6h12M4 14h12M7 3v6M13 11v6"/></svg>Connections</a>
+    </nav>
+    <div class="sidebar-bottom"><div class="sandbox-label"><span></span>PayPal sandbox</div><p>Test invoices. Simulated money.</p><a href="https://developer.paypal.com/dashboard/" target="_blank" rel="noopener noreferrer">Developer dashboard ↗</a><div class="profile"><span class="workspace-avatar">Y</span><div>Your workspace<small>Stored on this Mac</small></div></div></div>
+  </aside>
+  <main id="main" tabindex="-1"><div id="view"><h1>New invoice</h1><p>Loading your workspace…</p></div></main>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="chatgpt-welcome" aria-labelledby="chatgpt-welcome-title"><h2 id="chatgpt-welcome-title">You’re using your ChatGPT plan</h2><p>Eligible AI requests in Worknote use your ChatGPT plan and share its usage limits. Manage the app’s access and usage in ChatGPT settings.</p><div class="dialog-actions"><a class="secondary" href="https://chatgpt.com/#settings/Usage" target="_blank" rel="noopener noreferrer">Manage usage ↗</a><button class="primary" data-action="chatgpt-welcome">Got it</button></div></dialog>
+  <dialog id="approval-dialog" aria-labelledby="approval-title"><form method="dialog"><h2 id="approval-title">Create this PayPal draft?</h2><p id="approval-copy"></p><p class="muted">This creates a sandbox draft. Making it payable is a separate action. No email will be sent.</p><label class="check-label"><input type="checkbox" id="approval-check"> I checked the client, quantities, rates, and total.</label><div class="dialog-actions"><button value="cancel" class="secondary">Keep reviewing</button><button value="approve" class="primary" id="confirm-approval" disabled>Approve & create draft</button></div></form></dialog>
+  <noscript><p>Enable JavaScript to draft and manage invoices.</p></noscript>
+</body>
+</html>
